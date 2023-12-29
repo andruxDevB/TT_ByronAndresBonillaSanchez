@@ -1,0 +1,27 @@
+- instalar Vite React 
+    npm create vite@latest frontend --template react-ts
+
+- instalar bootstrap
+    npm i --save bootstrap @popperjs/core
+
+- instalar sass
+    npm i --save-dev sass
+
+- instalar types/node
+    npm i --save-dev @types/node
+
+- importar bootstrap
+    import path from 'path'
+
+    export default {
+        root: path.resolve(__dirname, 'src'),
+        resolve: {
+            alias: {
+            '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
+            }
+        }
+    }
+
+- Agregar a 'src/scss/styles.scss'
+    // Import all of Bootstrap's CSS
+    @import "~bootstrap/scss/bootstrap";

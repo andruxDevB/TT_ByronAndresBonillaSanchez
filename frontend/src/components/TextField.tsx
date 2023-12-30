@@ -1,5 +1,8 @@
 import TextField from '@mui/material/TextField';
 
 export default function TextFieldUsage() {
-    return <TextField label="Standard" variant="standard" />
+    return 
+    <div className='m-4'>
+        <TextField label="Standard" variant="standard" />
+    </div>
 }

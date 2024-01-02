@@ -55,37 +55,37 @@
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
-                                            08:10:00
+                                            {{ $activity->time_pickup }}
                                         </p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $activity->hotel->name }}
+                                            {{-- {{ $activity->hotel->name }} --}}
                                         </p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $activity->hotel->room }}
+                                            {{-- {{ $activity->hotel->room }} --}}
                                         </p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $activity->guide->profile->first_name }} {{ $activity->guide->profile->last_name }}
+                                            {{-- {{ $activity->guide->profile->first_name }} {{ $activity->guide->profile->last_name }} --}}
                                         </p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $activity->meal->breakfast }}
+                                            {{-- {{ $activity->meal->breakfast }} --}}
                                         </p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $activity->meal->lunch }}
+                                            {{-- {{ $activity->meal->lunch }} --}}
                                         </p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $activity->meal->dinner }}
+                                            {{-- {{ $activity->meal->dinner }} --}}
                                         </p>
                                     </td>
                                     <td class="align-middle text-center text-sm">

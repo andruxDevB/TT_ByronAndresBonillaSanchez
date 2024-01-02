@@ -74,9 +74,7 @@
                             </tbody>
                         </table>
                     @else
-                        <div class="text-center my-4">
-                            <p>Not found records</p>
-                        </div>
+                        <x-alert.noResults result='international flights' />
                     @endif
                 </div>
             </div>

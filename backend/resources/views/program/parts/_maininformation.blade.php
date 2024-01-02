@@ -10,11 +10,6 @@
             <p class="mb-0 font-weight-normal text-sm">Program</p>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3 text-center">
-        <a href="{{-- {{ route('guides.edit', $guide) }} --}}" class="btn bg-gradient-success mb-0">
-            <i class="fas fa-user-edit text-secondary text-sm text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Program"></i>&nbsp;&nbsp;Edit Program
-        </a>
-    </div>
 </div>
 <div class="row">
     <div class="col-12">

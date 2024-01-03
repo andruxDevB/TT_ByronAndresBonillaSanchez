@@ -1,18 +1,7 @@
 <div class="row">
     <div class="col-12">
         <div class="card my-4">
-            <div class="card-header p-0 position-relative mt-n4 mx-3 mb-3 z-index-2">
-                <div class="d-flex align-items-center bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                    <div class="w-100">
-                        <h6 class="text-white mx-3">Domestic Flights</h6>
-                    </div>
-                    <div class="flex-shrink-1 pe-3">
-                        <a href="#collapseExample" role="button" data-bs-toggle="modal" data-bs-target="#modal-domesticflight">
-                            <i class="material-icons text-white fs-4">post_add</i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <x-card.cardHeaderProgram title="Domestic Flights" icon="travel" />
 
             <x-add-new href="{{-- {{ route('guides.edit', $guide) }} --}}" value="New flight" />
 

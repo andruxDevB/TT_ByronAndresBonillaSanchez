@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->text('name');
             $table->date('date');
-            $table->time('time_pickup');
-            $table->string('day');
-            $table->string('breakfast', 100);
-            $table->string('lunch',100);
-            $table->string('dinner',100);
-            $table->text('remarks');
+            $table->time('time_pickup')->nullable();
+            $table->string('day')->nullable();
+            $table->string('breakfast', 100)->nullable();
+            $table->string('lunch', 100)->nullable();
+            $table->string('dinner', 100)->nullable();
+            $table->text('remarks')->nullable();
             $table->unsignedBigInteger('program_id')->nullable();
             $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade');
             $table->unsignedBigInteger('guide_id')->nullable();

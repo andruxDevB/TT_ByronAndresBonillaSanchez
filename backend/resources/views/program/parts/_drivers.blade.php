@@ -1,12 +1,10 @@
 <div class="row">
     <div class="col-12">
         <div class="card my-4">
-            <div class="card-header p-0 position-relative mt-n4 mx-3 mb-3 z-index-2">
-                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                    <h6 class="text-white mx-3">Drivers</h6>
-                </div>
-            </div>
+            <x-card.cardHeaderProgram title="Drivers" icon="drive_eta"/>
+
             <x-add-new href="{{-- {{ route('guides.edit', $guide) }} --}}" value="New driver" />
+            
             <div class="card-body px-0 pb-2">
                 <div class="table-responsive p-0">
                     @if ($program->activities->count())

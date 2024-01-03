@@ -18,8 +18,8 @@
             @include('program.parts._internationalFlight')
             @include('program.parts._domesticFlight')
             @include('program.parts._galapagosinformation')
-            {{-- @include('program.parts._guides')
-            @include('program.parts._drivers') --}}
+            @include('program.parts._guides')
+            @include('program.parts._drivers')
             <x-footer.auth></x-footer.auth>
         </div>
     </x-main.main>

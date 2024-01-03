@@ -76,7 +76,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark {{ $activePage == 'hotels' ? ' active bg-gradient-primary' : '' }}  "
-                    href="{{-- {{ route('hotels.index') }} --}}">
+                    href="{{ route('hotels.index') }}">
                     <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-symbols-outlined opacity-10">hotel</i>
                     </div>

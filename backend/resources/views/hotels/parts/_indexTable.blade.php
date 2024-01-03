@@ -16,10 +16,14 @@
                     <span class="text-secondary text-xs font-weight-bold ps-2">{{ $hotel->name }}</span>
                 </td>
                 <td class="align-middle text-center">
-                    <p class="text-secondary text-xs mb-0">{{ $hotel->category }}</p>
+                    <x-category.starCategory category="{{ $hotel->category }}"></x-category.starCategory>
+                    {{-- <p class="text-secondary text-xs mb-0">{{ $hotel->category }}</p>
+                    <span class="material-symbols-outlined text-warning text-sm">
+                        star
+                    </span> --}}
                 </td>
                 <td class="align-middle text-center">
-                    <p class="text-secondary text-xs mb-0">{{ $hotel->name_executive }}</p>
+                    <p class="text-secondary text-xs mb-0">{{ $hotel->sales_executive }}</p>
                 </td>
                 <td class="align-middle text-center">
                     <p class="text-secondary text-xs mb-0">{{ $hotel->email }}</p>

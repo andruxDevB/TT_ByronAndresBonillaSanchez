@@ -83,8 +83,4 @@ class HotelController extends Controller
 
         return redirect()->route('hotels.show', $hotel->id)->with('status', 'Hotel information updated successfully.');
     }
-
-    /* public function destroy(Hotel $hotel)
-    {
-    } */
 }

@@ -1,63 +1,32 @@
 @csrf
 <div class="row">
+    <x-forms.inputEdit label="Hotel Name" type="text" name="name" value="{{ old('name',$hotel->name) }}" error="name"/>
+        
+    <x-forms.inputEdit label="Country" type="text" name="country" value="{{ old('country',$hotel->country) }}" error="country"/>
+        
+    <x-forms.inputEdit label="City" type="text" name="city" value="{{ old('city',$hotel->city) }}" error="city"/>
+        
     <div class="col-md-4 col-12">
         <div class="input-group input-group-static mb-4">
-            <label for="name">Hotel Name</label>
-            <input type="text" name="name" class="form-control ps-3" value="{{ old("name",$hotel->name) }}">
-            @error('name')
+            <label for="category">Hotel Category</label>
+            <select class="form-control" name="category">
+                <option value="5" {{ old("category",$hotel->category) == '5' ? 'selected' : '' }}>5</option>
+                <option value="4" {{ old("category",$hotel->category) == '4' ? 'selected' : '' }}>4</option>
+                <option value="3" {{ old("category",$hotel->category) == '3' ? 'selected' : '' }}>3</option>
+                <option value="2" {{ old("category",$hotel->category) == '2' ? 'selected' : '' }}>2</option>
+                <option value="1" {{ old("category",$hotel->category) == '1' ? 'selected' : '' }}>1</option>
+            </select>
+            @error('category')
                 <p class='text-danger inputerror'>{{ $message }} </p>
             @enderror
         </div>
     </div>
-    <div class="col-md-4 col-12">
-        <div class="input-group input-group-static mb-4">
-            <label for="name">Country</label>
-            <input type="text" name="country" class="form-control ps-3" value="{{ old("country",$hotel->country) }}">
-            @error('country')
-                <p class='text-danger inputerror'>{{ $message }} </p>
-            @enderror
-        </div>
-    </div>
-    <div class="col-md-4 col-12">
-        <div class="input-group input-group-static mb-4">
-            <label for="name">City</label>
-            <input type="text" name="city" class="form-control ps-3" value="{{ old("city",$hotel->city) }}">
-            @error('city')
-                <p class='text-danger inputerror'>{{ $message }} </p>
-            @enderror
-        </div>
-    </div>
-    <div class="col-md-6 input-group input-group-static mb-4">
-        <label for="category">Hotel Category</label>
-        <select class="form-control" name="category">
-            <option value="Luxury" {{ old("category",$hotel->category) == 'Luxury' ? 'selected' : '' }}>Luxury</option>
-            <option value="First Class" {{ old("category",$hotel->category) == 'First Class' ? 'selected' : '' }}>First Class</option>
-            <option value="Executive" {{ old("category",$hotel->category) == 'Executive' ? 'selected' : '' }}>Executive</option>
-        </select>
-        @error('category')
-            <p class='text-danger inputerror'>{{ $message }} </p>
-        @enderror
-    </div>
-    <div class="col-md-4 input-group input-group-static mb-4">
-        <label for="sales_executive">Executive Sales</label>
-        <input type="text" name="sales_executive" class="form-control ps-3" value="{{ old("sales_executive",$hotel->sales_executive) }}">
-        @error('sales_executive')
-            <p class='text-danger inputerror'>{{ $message }} </p>
-        @enderror
-    </div>
-    <div class="col-md-4 input-group input-group-static mb-4">
-        <label for="email">Email</label>
-        <input type="email" name="email" class="form-control ps-3" value="{{ old("email",$hotel->email) }}">
-        @error('email')
-            <p class='text-danger inputerror'>{{ $message }} </p>
-        @enderror
-    </div>
-    <div class="col-md-4 input-group input-group-static mb-4">
-        <label for="phone">Telephone</label>
-        <input type="text" name="phone" class="form-control ps-3" value="{{ old("phone",$hotel->phone) }}">
-        @error('phone')
-            <p class='text-danger inputerror'>{{ $message }} </p>
-        @enderror
-    </div>
+    
+    <x-forms.inputEdit label="Executive Sales" type="text" name="sales_executive" value="{{ old('sales_executive',$hotel->sales_executive) }}" error="sales_executive"/>
+        
+    <x-forms.inputEdit label="Email" type="email" name="email" value="{{ old('email',$hotel->email) }}" error="sales_executive"/>
+    
+    <x-forms.inputEdit label="Telephone" type="text" name="phone" value="{{ old('phone',$hotel->phone) }}" error="phone"/>
+    
 </div>
 <x-buttons.buttonsForms submit='Update' back='Return'></x-buttons.buttonsForms>

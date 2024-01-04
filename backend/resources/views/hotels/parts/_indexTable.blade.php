@@ -32,7 +32,7 @@
                     <p class="text-secondary text-xs mb-0">{{ $hotel->phone }}</p>
                 </td>
                 <td class="align-middle">
-                    <x-buttons.actions routeView='{{ route("hotels.show", $hotel) }}' routeEdit='{{ route("hotels.edit", $hotel) }}' routeDelete=''></x-buttons.actions>
+                    <x-buttons.actions routeView='{{ route("hotels.show", $hotel) }}' routeEdit='{{ route("hotels.edit", $hotel) }}'></x-buttons.actions>
                 </td>
             </tr>
         @endforeach

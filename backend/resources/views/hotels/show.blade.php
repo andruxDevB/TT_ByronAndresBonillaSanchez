@@ -14,7 +14,7 @@
                     <x-profile.headerInfo imgAvatar="{{ asset('/img/001-revisin.png') }}" nameProfile="{{ $hotel->name }}" typeProfile='Hotel'></x-profile.headerInfo>
                     <!-- End header Profile -->
                     <div class="col-lg-3 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3 text-center">
-                        <a class="btn bg-gradient-success mb-0" href="javascript:;">
+                        <a class="btn bg-gradient-success mb-0" href="{{ route("hotels.edit", $hotel) }}">
                             <i class="fas fa-user-edit text-secondary text-sm text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>&nbsp;&nbsp;Edit information
                         </a>
                     </div>

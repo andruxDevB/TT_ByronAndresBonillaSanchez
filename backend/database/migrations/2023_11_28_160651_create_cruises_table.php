@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rooms', function (Blueprint $table) {
+        Schema::create('cruises', function (Blueprint $table) {
             $table->id();
-            $table->string('name',30);
+            $table->string('name', 100);
+            $table->enum('category', ['Luxury', 'First Class', 'Tourist', 'Diving']);
+            $table->string('sales_executive', 50);
+            $table->string('email');
+            $table->string('phone', 15)->nullable();
             $table->boolean('active')->default(true);
         });
     }
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rooms');
+        Schema::dropIfExists('cruises');
     }
 };

@@ -1,4 +1,4 @@
-<x-layout bodyClass="g-sidenav-show bg-gray-200">
+<x-app-layout bodyClass="g-sidenav-show bg-gray-200">
     <x-navbars.sidebar activePage="hotels"></x-navbars.sidebar>
     <x-main.main>
         <!-- Navbar -->
@@ -28,4 +28,4 @@
             <x-footer.auth></x-footer.auth>
         </div>
     </x-main.main>
-</x-layout>
+</x-app-layout>

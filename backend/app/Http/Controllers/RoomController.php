@@ -3,28 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
-    public function index()
-    {}
+    public function store(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'idh' => 'required',
+            'room_type' => 'required',
+        ]);
+        $room = new Room;
+        $room->name = $request->room_type;
+        $room->hotel_id = $request->idh;
+        $room->save();
 
-    public function create()
-    {}
-
-    public function store(Request $request)
-    {}
-
-    public function show(Room $room)
-    {}
-
-    public function edit(Room $room)
-    {}
-
-    public function update(Request $request, Room $room)
-    {}
-
-    public function destroy(Room $room)
-    {}
+        return redirect()->back()->with('status', 'New room created successfully.');
+    }
 }

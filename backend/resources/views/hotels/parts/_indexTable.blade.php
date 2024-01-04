@@ -16,7 +16,7 @@
                     <span class="text-secondary text-xs font-weight-bold ps-2">{{ $hotel->name }}</span>
                 </td>
                 <td class="align-middle text-center">
-                    <x-category.starCategory category="{{ $hotel->category }}"></x-category.starCategory>
+                    <x-category.starCategory category="{{ $hotel->category }}" />
                     {{-- <p class="text-secondary text-xs mb-0">{{ $hotel->category }}</p>
                     <span class="material-symbols-outlined text-warning text-sm">
                         star

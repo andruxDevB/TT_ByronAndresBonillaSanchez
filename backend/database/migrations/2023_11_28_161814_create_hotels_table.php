@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cruises', function (Blueprint $table) {
+        Schema::create('hotels', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100);
-            $table->enum('category',['Luxury','First Class', 'Tourist', 'Diving']);
-            $table->string('sales_executive',50);
+            $table->string('name', 100);
+            $table->string('country', 50);
+            $table->string('city', 50);
+            $table->enum('category', [5, 4, 3, 2, 1]);
+            $table->string('sales_executive', 50);
             $table->string('email');
-            $table->string('phone',15);
+            $table->string('phone', 15)->nullable();
             $table->boolean('active')->default(true);
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cruises');
+        Schema::dropIfExists('hotels');
     }
 };

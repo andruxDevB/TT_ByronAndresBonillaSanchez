@@ -1,4 +1,4 @@
-<x-layout bodyClass="g-sidenav-show bg-gray-200">
+<x-app-layout bodyClass="g-sidenav-show bg-gray-200">
     <x-navbars.sidebar activePage="hotels"></x-navbars.sidebar>
     <x-main.main>
         <!-- Navbar -->
@@ -45,13 +45,7 @@
                         @include('hotels.parts._rooms')
                         <!-- End Rooms -->
                     @else
-                        <div class="px-3">
-                            <div class="col-12 card card-blog card-plain border text-center">
-                                <div class="card-body py-4 px-3">
-                                    <p class="mb-0">There are no rooms to show.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <x-alert.noResults result="rooms"/>
                     @endif
                     <x-buttons.return routeReturn="{{ route('hotels.index') }}"></x-buttons.return>
                 </div>

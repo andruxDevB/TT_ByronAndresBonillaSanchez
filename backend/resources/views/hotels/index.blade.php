@@ -13,7 +13,7 @@
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <!-- Title -->
-                            <x-title.titleGradient icon='drive_eta' title='Hotels Management'></x-title.titleGradient>
+                            <x-title.titleGradient icon='hotel' title='Hotels Management'></x-title.titleGradient>
                             <!-- End Title -->
                         </div>
                         <div class=" me-3 my-3 text-end">

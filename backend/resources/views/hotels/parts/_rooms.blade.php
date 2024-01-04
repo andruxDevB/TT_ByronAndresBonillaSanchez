@@ -3,7 +3,7 @@
         <div class="card card-blog card-plain border">
             <div class="card-body p-3">
                 <p class="mb-0 text-sm">Room</p>
-                <h5>{{ $room->room_type }}</h5>
+                <h5>{{ $room->name }}</h5>
             </div>
         </div>
     </div>

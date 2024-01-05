@@ -1,10 +1,22 @@
 @csrf
 <div class="row">
-    <x-forms.inputEdit label="Hotel Name" type="text" name="name" value="{{ old('name',$hotel->name) }}" error="name"/>
+    <x-forms.inputEdit label="Hotel Name" type="text" name="name" value="{{ old('name',$hotel->name) }}">
+        @error('name')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
         
-    <x-forms.inputEdit label="Country" type="text" name="country" value="{{ old('country',$hotel->country) }}" error="country"/>
-        
-    <x-forms.inputEdit label="City" type="text" name="city" value="{{ old('city',$hotel->city) }}" error="city"/>
+    <x-forms.inputEdit label="Country" type="text" name="country" value="{{ old('country',$hotel->country) }}">
+        @error('country')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+
+    <x-forms.inputEdit label="City" type="text" name="city" value="{{ old('city',$hotel->city) }}" error="city">
+        @error('city')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
         
     <div class="col-md-4 col-12">
         <div class="input-group input-group-static mb-4">
@@ -22,11 +34,22 @@
         </div>
     </div>
     
-    <x-forms.inputEdit label="Executive Sales" type="text" name="sales_executive" value="{{ old('sales_executive',$hotel->sales_executive) }}" error="sales_executive"/>
+    <x-forms.inputEdit label="Executive Sales" type="text" name="sales_executive" value="{{ old('sales_executive',$hotel->sales_executive) }}">
+        @error('sales_executive')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
         
-    <x-forms.inputEdit label="Email" type="email" name="email" value="{{ old('email',$hotel->email) }}" error="sales_executive"/>
+    <x-forms.inputEdit label="Email" type="email" name="email" value="{{ old('email',$hotel->email) }}">
+        @error('email')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
     
-    <x-forms.inputEdit label="Telephone" type="text" name="phone" value="{{ old('phone',$hotel->phone) }}" error="phone"/>
-    
+    <x-forms.inputEdit label="Telephone" type="text" name="phone" value="{{ old('phone',$hotel->phone) }}">
+        @error('phone')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
 </div>
 <x-buttons.buttonsForms submit='Update' back='Return'></x-buttons.buttonsForms>

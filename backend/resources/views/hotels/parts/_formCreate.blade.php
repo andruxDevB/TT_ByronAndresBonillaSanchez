@@ -1,29 +1,55 @@
 @csrf
 <div class="row">
+    <x-forms.inputEdit label="Hotel Name" type="text" name="name" value="">
+        @error('name')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+        
+    <x-forms.inputEdit label="Country" type="text" name="country" value="">
+        @error('country')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+
+    <x-forms.inputEdit label="City" type="text" name="city" value="">
+        @error('city')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+        
     <div class="col-md-4 col-12">
-        <x-input type="text" id="name" name="name" class="form-control" label="{{ __('Hotel Name') }}" :value="old('name')" :required="true" :autofocus="true"/>
+        <div class="input-group input-group-static mb-4">
+            <label for="category">Hotel Category</label>
+            <select class="form-control" name="category">
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select>
+            @error('category')
+                <p class='text-danger inputerror'>{{ $message }} </p>
+            @enderror
+        </div>
     </div>
-    <div class="col-md-4 col-12">
-        <x-input type="text" id="country" name="country" class="form-control" label="{{ __('Country') }}" :value="old('country')" :required="true"/>
-    </div>
-    <div class="col-md-4 col-12">
-        <x-input type="text" id="city" name="city" class="form-control" label="{{ __('City') }}" :value="old('city')" :required="true"/>
-    </div>
-    <div class="col-md-4 col-12">
-        <x-selectCategory name="category" class="form-control" label="{{ __('Hotel Category') }}" :required="true" />
-    </div>
-    <div class="col-md-4 col-12">
-        <x-input type="text" id="sales_executive" name="sales_executive" class="form-control" label="{{ __('Executive Sales') }}" :value="old('sales_executive')" :required="true"/>
-    </div>
-    <div class="col-md-4 col-12">
-        <x-input type="email" id="email" name="email" class="form-control" label="{{ __('Email') }}" :value="old('email')" :required="true"/>
-    </div>
-    <div class="col-md-4 col-12">
-        <x-input type="text" id="phone" name="phone" class="form-control" label="{{ __('Telephone') }}" :value="old('phone')" :required="true"/>
-    </div>
-    <div class="col-md-4 col-12 lh-lg pt-4 text-center">
-        <label for="active">Active</label>
-        <md-switch name="active" selected></md-switch>
-    </div>
+    
+    <x-forms.inputEdit label="Executive Sales" type="text" name="sales_executive" value="">
+        @error('sales_executive')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+        
+    <x-forms.inputEdit label="Email" type="email" name="email" value="">
+        @error('email')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+    
+    <x-forms.inputEdit label="Telephone" type="text" name="phone" value="">
+        @error('phone')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
 </div>
 <x-buttons.buttonsForms submit='Create' back='Return'></x-buttons.buttonsForms>

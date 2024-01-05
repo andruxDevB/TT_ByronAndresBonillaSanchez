@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Hotel;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
-use Illuminate\Support\Str;
+use App\Http\Requests\StoreHotelRequest;
+use App\Services\HotelService;
 
 class HotelController extends Controller
 {
@@ -22,28 +21,9 @@ class HotelController extends Controller
         return view('hotels.create');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(StoreHotelRequest $request, HotelService $hotelservice): RedirectResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:100',
-            'country' => 'required|string|max:50',
-            'city' => 'required|string|max:50',
-            'category' => 'required',
-            'sales_executive' => 'required|string|max:50',
-            'email' => 'required|email',
-            'phone' => 'required|numeric|max_digits:13',
-        ]);
-
-        $hotel = new Hotel;
-        $hotel->name = $request->name;
-        $hotel->country = $request->country;
-        $hotel->city = $request->city;
-        $hotel->category = $request->category;
-        $hotel->sales_executive = $request->sales_executive;
-        $hotel->email = Str::lower($request->email);
-        $hotel->phone = $request->phone;
-        $hotel->save();
-
+        $hotelservice->createHotel($request);
         return to_route('hotels.index')->with('status', 'Hotel information created successfully');
     }
 
@@ -57,30 +37,9 @@ class HotelController extends Controller
         return view('hotels.edit', compact('hotel'));
     }
 
-    public function update(Request $request, Hotel $hotel): RedirectResponse
+    public function update(StoreHotelRequest $request, HotelService $hotelservice, Hotel $hotel): RedirectResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:100',
-            'country' => 'required|string|max:50',
-            'city' => 'required|string|max:50',
-            'category' => 'required',
-            'sales_executive' => 'required|string|max:50',
-            'email' => 'required|email',
-            'phone' => 'required|numeric|max_digits:13',
-        ]);
-
-        DB::table('hotels')
-            ->where('id', $hotel->id)
-            ->update([
-                'name' => $request->input('name'),
-                'country' => $request->input('country'),
-                'city' => $request->input('city'),
-                'category' => $request->input('category'),
-                'sales_executive' => $request->input('sales_executive'),
-                'email' => Str::lower($request->input('email')),
-                'phone' => $request->input('phone'),
-            ]);
-
+        $hotelservice->updateHotel($request, $hotel);
         return redirect()->route('hotels.show', $hotel->id)->with('status', 'Hotel information updated successfully.');
     }
 }

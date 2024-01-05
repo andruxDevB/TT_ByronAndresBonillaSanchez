@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Cruise extends Model
 {
@@ -19,4 +20,9 @@ class Cruise extends Model
     ];
 
     public $timestamps = false;
+
+    public function cabins(): HasMany
+    {
+        return $this->hasMany(Cabin::class, 'cruise_id');
+    }
 }

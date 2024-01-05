@@ -1,4 +1,4 @@
-<x-layout bodyClass="g-sidenav-show bg-gray-200">
+<x-app-layout bodyClass="g-sidenav-show bg-gray-200">
     <x-navbars.sidebar activePage="cruises"></x-navbars.sidebar>
     <x-main.main>
         <!-- Navbar -->
@@ -41,4 +41,4 @@
             <!-- End Footer -->
         </div>
     </x-main.main>
-</x-layout>
+</x-app-layout>

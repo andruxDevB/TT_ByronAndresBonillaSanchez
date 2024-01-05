@@ -19,7 +19,7 @@
                 <p class="text-secondary text-xs mb-0">{{ $cruise->category }}</p>
             </td>
             <td class="align-middle text-center">
-                <p class="text-secondary text-xs mb-0">{{ $cruise->name_executive }}</p>
+                <p class="text-secondary text-xs mb-0">{{ $cruise->sales_executive }}</p>
             </td>
             <td class="align-middle text-center">
                 <p class="text-secondary text-xs mb-0">{{ $cruise->email }}</p>

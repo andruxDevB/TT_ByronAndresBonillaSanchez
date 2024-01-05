@@ -1,4 +1,4 @@
-<x-layout bodyClass="g-sidenav-show bg-gray-200">
+<x-app-layout bodyClass="g-sidenav-show bg-gray-200">
     <x-navbars.sidebar activePage="cruises"></x-navbars.sidebar>
     <x-main.main>
         <!-- Navbar -->
@@ -15,7 +15,7 @@
                     <!-- End header Profile -->
                 </div>
                 <div class="card card-plain h-100">
-                    <div class="card-header pb-0 p-3">
+                    <div class="card-header bg-white pb-0 p-3">
                         <div class="row">
                             <div class="col-md-8 d-flex align-items-center">
                                 <h3 class="mb-3">Edit Cruise Information</h6>

@@ -2,29 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cabin;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreCabinRequest;
+use App\Services\CabinService;
+use Illuminate\Http\RedirectResponse;
 
 class CabinController extends Controller
 {
-    public function index()
-    {}
-    
-    public function create()
-    {}
-    
-    public function store(Request $request)
-    {}
-    
-    public function show(Cabin $cabin)
-    {}
-    
-    public function edit(Cabin $cabin)
-    {}
-    
-    public function update(Request $request, Cabin $cabin)
-    {}
-    
-    public function destroy(Cabin $cabin)
-    {}
+    public function store(StoreCabinRequest $request, CabinService $cabinService): RedirectResponse
+    {
+        $cabinService->createCabin($request);
+        return redirect()->back()->with('status', 'New cabin created successfully.');
+    }
 }

@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Guide extends Model
 {
@@ -17,8 +16,8 @@ class Guide extends Model
         'guide_driver_profile_id',
     ];
 
-    public function profile(): HasOne
+    public function profile(): BelongsTo
     {
-        return $this->hasOne(GuideDriverProfile::class, 'id');
+        return $this->belongsTo(GuideDriverProfile::class, 'guide_driver_profile_id');
     }
 }

@@ -1,22 +1,39 @@
 @csrf
 <div class="row">
-    <div class="col-md-4 mb-4">
-        <x-input type="text" id="first_name" name="first_name" class="form-control" label="{{ __('First Name') }}" :required="true" :autofocus="true"/>
-    </div>
-    <div class="col-md-4 mb-4">
-        <x-input type="text" id="last_name" name="last_name" class="form-control" label="{{ __('Last Name') }}" :required="true"/>
-    </div>
-    <div class="col-md-4 mb-4">
-        <x-input type="email" id="email" name="email" class="form-control" label="{{ __('Email') }}" :required="true"/>
-    </div>
-    <div class="col-md-4 mb-4">
-        <x-input type="text" id="telephone" name="telephone" class="form-control" label="{{ __('Telephone') }}" :required="true"/>
-    </div>
-    <div class="col-md-4 mb-4">
-        <x-input type="text" id="id_card_number" name="id_card_number" class="form-control" label="{{ __('Id Card Number') }}" :required="true"/>
-    </div>
-    <div class="col-md-4 mb-4">
-        <x-input type="text" id="languajes" name="languajes" class="form-control" label="{{ __('Languajes') }}" :required="true"/>
-    </div>
+    <x-forms.inputEdit label="First Name" type="text" name="first_name" value="">
+        @error('first_name')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+        
+    <x-forms.inputEdit label="Last Name" type="text" name="last_name" value="">
+        @error('last_name')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+
+    <x-forms.inputEdit label="Email" type="email" name="email" value="">
+        @error('email')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+
+    <x-forms.inputEdit label="Telephone" type="text" name="phone" value="">
+        @error('phone')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+
+    <x-forms.inputEdit label="Id Card Number" type="text" name="id_card_number" value="">
+        @error('id_card_number')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+    
+    <x-forms.inputEdit label="Languajes" type="text" name="languajes" value="">
+        @error('languajes')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
 </div>
 <x-buttons.buttonsForms submit='Create' back='Return'/>

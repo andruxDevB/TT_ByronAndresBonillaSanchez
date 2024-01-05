@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('first_name', 30);
             $table->string('last_name', 30);
+            $table->string('country', 30);
             $table->string('phone', 15);
             $table->string('id_card_number', 20)->unique();
             $table->string('email')->unique();

@@ -20,9 +20,4 @@ class GuideDriverProfile extends Model
     ];
 
     public $timestamps = false;
-
-    public function guide(): BelongsTo
-    {
-        return $this->belongsTo(Guide::class,'guide_driver_profile_id');
-    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Http\Resources\GuideResource;
 use App\Models\Guide;
 use App\Models\GuideDriverProfile;
 use Illuminate\Http\Request;
@@ -44,5 +45,23 @@ class GuideService
                 'phone' => $request->input('phone'),
                 'id_card_number' => $request->input('id_card_number'),
             ]);
+    }
+
+    public function apiRegisterGuide(Request $request){
+        $profile = new GuideDriverProfile();
+        $profile->first_name = $request->input('first_name');
+        $profile->last_name = $request->input('last_name');
+        $profile->email = Str::lower($request->input('email'));
+        $profile->phone = $request->input('phone');
+        $profile->id_card_number = $request->input('id_card_number');
+        $profile->save();
+
+        $guide = Guide::create([
+            'guide_driver_profile_id' => $profile->id,
+            'languajes' => $request->languajes,
+        ]);
+
+        $success = new GuideResource($guide);
+        return $success;
     }
 }

@@ -6,7 +6,7 @@
         <!-- End Navbar -->
         <div class="container-fluid px-2 px-md-4">
             <!-- Bg Header -->
-            <x-profile.bgHeader bgImage='https://live.staticflickr.com/528/20306337269_2a7fbef60c_k.jpg'></x-profile>
+            <x-profile.bgHeader bgImage='https://live.staticflickr.com/5634/21255473045_9041495ec7_k.jpg'></x-profile>
             <!-- End Bg Header -->
             <div class="card card-body mx-3 mx-md-4 mt-n6">
                 <div class="row gx-4 mb-2">

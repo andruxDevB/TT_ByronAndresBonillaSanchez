@@ -67,7 +67,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark {{ $activePage == 'drivers' ? ' active bg-gradient-primary' : '' }}  "
-                    href="{{-- {{ route("drivers.index") }} --}}">
+                    href="{{ route("drivers.index") }}">
                     <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-symbols-outlined opacity-10">drive_eta</i>
                     </div>

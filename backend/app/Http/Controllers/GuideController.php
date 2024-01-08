@@ -29,20 +29,20 @@ class GuideController extends Controller
         return to_route('guides.index')->with('status', 'Guide profile created successfully');
     }
 
-    public function show(Guide $guide)
+    public function show(Guide $guide): View
     {
         return view('guides.show', compact('guide'));
     }
 
-    public function edit(Guide $guide)
+    public function edit(Guide $guide): View
     {
         $profile = GuideDriverProfile::get();
         return view('guides.edit', compact('profile', 'guide'));
     }
 
-    public function update(UpdateGuideRequest $request, GuideService $guideService, Guide $guide)
+    public function update(UpdateGuideRequest $request, GuideService $guideService, Guide $guide): RedirectResponse
     {
         $guideService->updateGuide($request, $guide);
-        return to_route('guides.index')->with('status', 'Guide profile updated successfully');
+        return to_route('guides.index')->with('status', 'Guide profile updated successfully.');
     }
 }

@@ -29,7 +29,7 @@
             <div class="mt-2">
                 <x-button type="submit" class="w-100 mb-2">
                     {{ __('Email Password Reset Link') }}
-                </x-button>                
+                </x-button>
             </div>
             <div class="mt-4 text-center">
                 <a class="text-sm font-weight-bold" href="{{ route('login') }}">

@@ -92,6 +92,15 @@
                     <span class="nav-link-text ms-1">Cruises</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark {{ $activePage == 'restaurants' ? ' active bg-gradient-primary' : '' }}  "
+                    href="{{ route('restaurants.index') }}">
+                    <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-symbols-outlined opacity-10">restaurant_menu</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Restaurants</span>
+                </a>
+            </li>
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-8">Account</h6>
             </li>

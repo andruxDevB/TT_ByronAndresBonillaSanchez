@@ -7,7 +7,7 @@ use App\Http\Requests\StoreDriverRequest;
 use App\Http\Resources\DriverResourceCollection;
 use App\Models\Driver;
 use App\Services\DriverService;
-use Illuminate\Http\Request;
+use App\Http\Resources\DriverResource;
 use Illuminate\Http\JsonResponse;
 
 class DriverController extends BaseController
@@ -24,9 +24,9 @@ class DriverController extends BaseController
         return $this->sendResponse($driver, 'Driver created succesfully.');
     }
 
-    public function show(Driver $driver)
-    {}
-
-    public function update(Request $request, Driver $driver)
-    {}
+    public function show(Driver $driver): JsonResponse
+    {
+        $success = new DriverResource($driver);
+        return $this->sendResponse($success, 'Driver showed succesfully.');
+    }
 }

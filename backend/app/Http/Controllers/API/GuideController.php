@@ -4,11 +4,10 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Http\Requests\StoreGuideRequest;
+use App\Http\Resources\GuideResource;
 use App\Http\Resources\GuideResourceCollection;
 use App\Models\Guide;
-use App\Models\GuideDriverProfile;
 use App\Services\GuideService;
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
 class GuideController extends BaseController
@@ -26,8 +25,8 @@ class GuideController extends BaseController
     }
 
     public function show(Guide $guide)
-    {}
-
-    public function update(Request $request, Guide $guide)
-    {}
+    {
+        $success = new GuideResource($guide);
+        return $this->sendResponse($success, 'Guide showed succesfully.');
+    }
 }

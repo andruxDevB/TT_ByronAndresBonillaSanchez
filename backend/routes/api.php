@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\DriverController;
 use App\Http\Controllers\API\GuideController;
+use App\Http\Controllers\API\HotelController;
 use App\Http\Controllers\API\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,5 @@ Route::controller(RegisterController::class)->group(function(){
 Route::middleware('auth:sanctum')->group(function(){
     Route::resource('guides', GuideController::class);
     Route::resource('drivers', DriverController::class);
+    Route::resource('hotels', HotelController::class);
 });

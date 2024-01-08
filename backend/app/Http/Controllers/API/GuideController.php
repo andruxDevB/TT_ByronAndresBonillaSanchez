@@ -24,7 +24,7 @@ class GuideController extends BaseController
         return $this->sendResponse($guide, 'Guide created succesfully.');
     }
 
-    public function show(Guide $guide)
+    public function show(Guide $guide): JsonResponse
     {
         $success = new GuideResource($guide);
         return $this->sendResponse($success, 'Guide showed succesfully.');

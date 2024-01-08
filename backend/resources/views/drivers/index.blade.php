@@ -25,13 +25,7 @@
                                     @if ($drivers->count())
                                         @include('drivers.parts._indexTable')
                                     @else
-                                        <div class="px-3 mb-4">
-                                            <div class="col-12 card card-blog card-plain border text-center">
-                                                <div class="card-body py-4 px-3">
-                                                    <p class="mb-0">There are no rooms to show.</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <x-alert.noResults result='drivers'></x-alert.noResults>
                                     @endif
                                     <!-- End Table Drivers -->
                                 </div>

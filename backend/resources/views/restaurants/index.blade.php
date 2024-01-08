@@ -1,8 +1,8 @@
 <x-app-layout bodyClass="g-sidenav-show bg-gray-200">
-    <x-navbars.sidebar activePage="guides"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="restaurants"></x-navbars.sidebar>
     <x-main.main>
         <!-- Navbar -->
-        <x-navbars.nav.auth sectionMenu="Services" titlePage="Guides Management"></x-navbars.nav.auth>
+        <x-navbars.nav.auth sectionMenu="Services" titlePage="Restaurants Management"></x-navbars.nav.auth>
         <!-- End Navbar -->
         <div class="container-fluid py-4">
             <!-- Alerts -->
@@ -13,23 +13,23 @@
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n3 mx-3 z-index-2">
                             <!-- Title -->
-                            <x-title.titleGradient icon='directions_walk' title='Guides Management'></x-title.titleGradient>
+                            <x-title.titleGradient icon='restaurant_menu' title='Restaurants Management'></x-title.titleGradient>
                             <!-- End Title -->
                         </div>
                         <div class=" me-3 my-3 text-end">
-                            <a class="btn bg-gradient-dark mb-0" href="{{ route('guides.create') }}">
-                                <i class="material-icons text-sm">add</i>&nbsp;&nbsp;New Guide
+                            <a class="btn bg-gradient-dark mb-0" href="{{ route('restaurants.create') }}">
+                                <i class="material-icons text-sm">add</i>&nbsp;&nbsp;New Restaurant
                             </a>
                         </div>
                         <div class="card-body px-0 pb-2">
                             <div class="table-responsive p-0">
-                                <!-- Table Guides -->
-                                @if ($guides->count())
-                                    @include('guides.parts._indexTable')
+                                <!-- Table Restaurants -->
+                                @if ($restaurants->count())
+                                    @include('restaurants.parts._indexTable')
                                 @else
-                                    <x-alert.noResults result='guides'></x-alert.noResults>
+                                    <x-alert.noResults result='restaurants'></x-alert.noResults>
                                 @endif
-                                <!-- End Table Guides -->
+                                <!-- End Table Restaurants -->
                             </div>
                         </div>
                     </div>

@@ -13,6 +13,9 @@
     </div>
     <hr class="horizontal dark mt-0 mb-2">
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
+        <form method="POST" action="{{ route('logout') }}" class="d-none" id="logout-form">
+            @csrf
+        </form>
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link text-dark {{ $activePage == 'dashboard' ? ' active bg-gradient-primary' : '' }} "
@@ -114,11 +117,11 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark " href="#">
+                <a class="nav-link text-dark " href="javascript:;">
                     <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-symbols-outlined opacity-10">logout</i>
                     </div>
-                    <span class="nav-link-text ms-1">Logout</span>
+                    <span class="nav-link-text ms-1" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</span>
                 </a>
             </li>
         </ul>

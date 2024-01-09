@@ -2,7 +2,7 @@
     <x-navbars.sidebar activePage="cruises"></x-navbars.sidebar>
     <x-main.main>
         <!-- Navbar -->
-        <x-navbars.nav.auth sectionMenu='Services' titlePage='Add New Cruise'></x-navbars.nav.auth>
+        <x-navbars.nav.auth sectionMenu='Services' titlePage='Edit {{ $cruise->name }} Information'></x-navbars.nav.auth>
         <!-- End Navbar -->
         <div class="container-fluid px-2 px-md-4">
             <!-- Bg Header -->

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\CruiseController;
 use App\Http\Controllers\API\DriverController;
 use App\Http\Controllers\API\GuideController;
 use App\Http\Controllers\API\HotelController;
@@ -30,4 +31,6 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::resource('guides', GuideController::class);
     Route::resource('drivers', DriverController::class);
     Route::resource('hotels', HotelController::class);
+    Route::resource('cruises', CruiseController::class);
+    //Route::resource('restaurants', CruiseController::class);
 });

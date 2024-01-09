@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Http\Resources\CruiseResource;
 use App\Models\Cruise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -32,5 +33,19 @@ class CruiseService
                 'email' => Str::lower($request->input('email')),
                 'phone' => $request->input('phone'),
             ]);
+    }
+
+    public function apiRegisterCruise(Request $request)
+    {
+        $cruise = Cruise::create([
+            'name' => $request->cruise_name,
+            'category' => $request->category,
+            'sales_executive' => $request->sales_executive,
+            'email' => $request->email,
+            'phone' => $request->phone
+        ]);
+
+        $success = new CruiseResource($cruise);
+        return $success;
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Driver;
+use App\Models\Guide;
 use App\Models\Program;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -24,7 +26,9 @@ class ProgramController extends Controller
     public function show(Program $program): View
     {
         $activities = Activity::where('program_id', 'id')->get();
-        return view('program.show', compact('program','activities'));
+        $guides = Guide::where('id', 'guide_id')->get();
+        $drivers = Driver::where('id', 'driver_id')->get();
+        return view('program.show', compact('program','activities','guides','drivers'));
     }
 
     public function edit(Program $program): View

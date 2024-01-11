@@ -28,7 +28,7 @@ class Activity extends Model
 
     public function guide(): BelongsTo
     {
-        return $this->belongsTo(Guide::class, "id");
+        return $this->belongsTo(Guide::class, "guide_id");
     }
 
     public function driver(): BelongsTo

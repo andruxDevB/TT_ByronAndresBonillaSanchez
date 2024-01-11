@@ -12,6 +12,13 @@ class Restaurant extends Model
     protected $fillable = [
         'name',
         'country',
+        'city',
+        'sales_executive',
+        'email',
+        'phone',
         'active'
     ];
+
+    public $timestamps = false;
+
 }

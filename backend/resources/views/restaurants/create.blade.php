@@ -10,10 +10,10 @@
             <!-- End Bg Header -->
             <div class="card card-body mx-3 mx-md-4 mt-n6">
                 <div class="card card-plain h-100">
-                    <div class="card-header pb-0 p-3">
+                    <div class="card-header bg-white pb-0 p-3">
                         <div class="row">
                             <div class="col-md-8 d-flex align-items-center">
-                                <h3 class="mb-3">New Guide</h3>
+                                <h3 class="mb-3">New Restaurant Information</h3>
                             </div>
                         </div>
                     </div>
@@ -21,9 +21,9 @@
                         <!-- Alerts -->
                         <x-alert.alerts></x-alert.alerts>
                         <!-- End Alerts -->
-                        <form method="POST" action="{{ route('guides.store') }}">
+                        <form method="POST" action="{{ route('restaurants.store') }}">
                             <!-- Create Profile -->
-                            @include('guides.parts._formCreate')
+                            @include('restaurants.parts._formCreate')
                             <!-- End Create Profile -->
                         </form>
                     </div>

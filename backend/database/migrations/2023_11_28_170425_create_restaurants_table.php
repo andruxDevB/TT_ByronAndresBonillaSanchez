@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name',100);
             $table->string('country',30);
+            $table->string('city', 50);
+            $table->string('sales_executive', 50);
+            $table->string('email')->nullable();
+            $table->string('phone', 15)->nullable();
             $table->boolean('active')->default(true);
         });
     }

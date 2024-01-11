@@ -1,37 +1,37 @@
 @csrf
-<div class="row">
-    <x-forms.inputEdit label="First Name" type="text" name="first_name" value="{{ old('first_name', $guide->profile->first_name) }}">
-        @error('first_name')
+<div class="row">        
+    <x-forms.inputEdit label="Restaurant Name" type="text" name="restaurant_name" value="{{ old('name', $restaurant->name) }}">
+        @error('restaurant_name')
             <p class='text-danger inputerror'>{{ $message }} </p>
         @enderror
     </x-forms.inputEdit>
-        
-    <x-forms.inputEdit label="Last Name" type="text" name="last_name" value="{{ old('last_name', $guide->profile->last_name) }}">
-        @error('last_name')
+    
+    <x-forms.inputEdit label="Country" type="text" name="country" value="{{ old('country', $restaurant->country) }}">
+        @error('country')
             <p class='text-danger inputerror'>{{ $message }} </p>
         @enderror
     </x-forms.inputEdit>
 
-    <x-forms.inputEdit label="Email" type="email" name="email" value="{{ old('email', $guide->profile->email) }}">
+    <x-forms.inputEdit label="City" type="text" name="city" value="{{ old('city', $restaurant->city) }}">
+        @error('city')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+
+    <x-forms.inputEdit label="Sales Executive" type="text" name="sales_executive" value="{{ old('sales_executive', $restaurant->sales_executive) }}">
+        @error('sales_executive')
+            <p class='text-danger inputerror'>{{ $message }} </p>
+        @enderror
+    </x-forms.inputEdit>
+
+    <x-forms.inputEdit label="Email" type="email" name="email" value="{{ old('email', $restaurant->email) }}">
         @error('email')
             <p class='text-danger inputerror'>{{ $message }} </p>
         @enderror
     </x-forms.inputEdit>
 
-    <x-forms.inputEdit label="Telephone" type="text" name="phone" value="{{ old('phone', $guide->profile->phone) }}">
+    <x-forms.inputEdit label="Telephone" type="text" name="phone" value="{{ old('phone', $restaurant->phone) }}">
         @error('phone')
-            <p class='text-danger inputerror'>{{ $message }} </p>
-        @enderror
-    </x-forms.inputEdit>
-
-    <x-forms.inputEdit label="Id Card Number" type="text" name="id_card_number" value="{{ old('id_card_number', $guide->profile->id_card_number) }}">
-        @error('id_card_number')
-            <p class='text-danger inputerror'>{{ $message }} </p>
-        @enderror
-    </x-forms.inputEdit>
-    
-    <x-forms.inputEdit label="Languajes" type="text" name="languajes" value="{{ old('languajes', $guide->languajes) }}">
-        @error('languajes')
             <p class='text-danger inputerror'>{{ $message }} </p>
         @enderror
     </x-forms.inputEdit>

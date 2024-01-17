@@ -33,6 +33,12 @@ class Activity extends Model
 
     public function driver(): BelongsTo
     {
-        return $this->belongsTo(Driver::class, "id");
+        return $this->belongsTo(Driver::class, "driver_id");
     }
+
+    public function hotel(): BelongsTo
+    {
+        return $this->belongsTo(Hotel::class, "hotel_id");
+    }
+
 }

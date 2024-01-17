@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12">
         <div class="card my-4">
-            <x-card.cardHeaderProgram title="Passengers Information (1 of {{ $program->num_pax }})" icon="person_add_alt" />
+            <x-card.cardHeaderProgram title="Passengers Information (1 of {{ $program->num_pax }})" icon="person_add_alt" modal="#" />
             
             <div class="card-body px-0 pb-2">
                 <div class="table-responsive p-0">

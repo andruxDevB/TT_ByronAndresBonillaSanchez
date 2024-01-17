@@ -18,21 +18,22 @@
             @include('program.parts._internationalFlight')
             @include('program.parts._domesticFlight')
             @include('program.parts._galapagosinformation')
-            @if ($guides->count())
+
+            {{-- @if ($guides->count()) --}}
                 <!-- Guides Table -->
                 @include('program.parts._guides')
                 <!-- End Guides Table -->
-            @else
+            {{-- @else
                 <x-alert.noResults result='guides' />
             @endif
-            @if ($guides->count())
+            @if ($drivers->count()) --}}
                 <!-- Drivers Table -->
                 @include('program.parts._drivers')
                 <!-- End Drivers Table -->
-            @else
+           {{--  @else
                 <x-alert.noResults result='drivers' />
             @endif
-            <x-footer.auth></x-footer.auth>
+            <x-footer.auth></x-footer.auth> --}}
         </div>
     </x-main.main>
     <script>

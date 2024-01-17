@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12">
         <div class="card my-4">
-            <x-card.cardHeaderProgram title="Domestic Flights" icon="travel" />
+            <x-card.cardHeaderProgram title="Domestic Flights" icon="travel" modal="#modal-domesticflight"/>
 
             <x-add-new href="{{-- {{ route('guides.edit', $guide) }} --}}" value="New flight" />
 

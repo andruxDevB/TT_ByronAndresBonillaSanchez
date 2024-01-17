@@ -8,7 +8,7 @@
                         <p class="mt-0 text-sm">Enter new domestic flight information.</p>
                     </div>
                     <div class="card-body">
-                        <form action="{{-- {{ route('domestic_flights.store') }} --}}" method="post">
+                        <form action="{{ route('domestic_flights.store') }}" method="post">
                             @csrf
                             <input type="hidden" name="idp" value="{{ $program->id }}">
                             <div class="input-group input-group-static mb-4">

@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('evaluations', function (Blueprint $table) {
+        Schema::create('surtrek_questions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('client_id')->nullable();
-            $table->foreign('client_id')->references('id')->on('clients');
-            $table->unsignedBigInteger('hotel_id')->nullable();
-            $table->foreign('');
+            $table->text('question')->nullable();
         });
     }
 
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('surtrek_questions');
     }
 };

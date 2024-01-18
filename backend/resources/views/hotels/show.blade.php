@@ -5,6 +5,9 @@
         <x-navbars.nav.auth sectionMenu="Services" titlePage="Information {{ $hotel->name }}"></x-navbars.nav.auth>
         <!-- End Navbar -->
         <div class="container-fluid px-2 px-md-4">
+            <!-- Alerts -->
+            <x-alert.alerts></x-alert.alerts>
+            <!-- End Alerts -->
             <!-- Bg Header -->
             <x-profile.bgHeader bgImage='https://live.staticflickr.com/5465/17644436749_36557365cd_h.jpg'></x-profile>
             <!-- End Bg Header -->

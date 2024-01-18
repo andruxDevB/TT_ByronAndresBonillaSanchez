@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('city', 50);
             $table->enum('category', [5, 4, 3, 2, 1]);
             $table->string('sales_executive', 50);
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('phone', 15)->nullable();
             $table->boolean('active')->default(true);
         });

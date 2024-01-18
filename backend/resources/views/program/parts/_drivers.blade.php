@@ -1,9 +1,7 @@
 <div class="row">
     <div class="col-12">
         <div class="card my-4">
-            <x-card.cardHeaderProgram title="Drivers" icon="drive_eta"/>
-
-            <x-add-new href="{{-- {{ route('guides.edit', $guide) }} --}}" value="New driver" />
+            <x-card.cardHeaderProgram title="Drivers" icon="drive_eta" modal="#"/>
             
             <div class="card-body px-0 pb-2">
                 <div class="table-responsive p-0">
@@ -25,7 +23,7 @@
                                     <tr>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                {{ $activity->driver->profile->first_name.' '.$activity->driver->profile->last_name }}
+                                                {{ $activity->driver->profile->first_name }} {{ $activity->driver->profile->last_name }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">
@@ -35,12 +33,12 @@
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                SURTREK
+                                                {{ $activity->driver->company }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                Toyota Fortuner
+                                                {{ $activity->driver->transport_type }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">

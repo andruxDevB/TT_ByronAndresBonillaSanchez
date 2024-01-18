@@ -1,14 +1,15 @@
 <div class="row px-3">
-    <x-input-info label="{{ __('First Name') }}" value="{{ $guide->profile->first_name }}"/>
+    <x-input-info label="{{ __('Restaurant Name') }}" value="{{ $restaurant->name }}"/>
     
-    <x-input-info label="{{ __('Last Name') }}" value="{{ $guide->profile->last_name }}"/>
+    <x-input-info label="{{ __('Country') }}" value="{{ $restaurant->country }}"/>
     
-    <x-input-info label="{{ __('Email') }}" value="{{ $guide->profile->email }}"/>
+    <x-input-info label="{{ __('City') }}" value="{{ $restaurant->city }}"/>
     
-    <x-input-info label="{{ __('Telephone') }}" value="{{ $guide->profile->phone }}"/>
+    <x-input-info label="{{ __('Sales Executive') }}" value="{{ $restaurant->sales_executive }}"/>
     
-    <x-input-info label="{{ __('Id Card Number') }}" value="{{ $guide->profile->id_card_number }}"/>
+    <x-input-info label="{{ __('Email') }}" value="{{ $restaurant->email }}"/>
     
-    <x-input-info label="{{ __('Languajes') }}" value="{{ $guide->languajes }}"/>
-    <x-buttons.return routeReturn="{{ route('guides.index') }}"></x-buttons.return>
+    <x-input-info label="{{ __('Telephone') }}" value="{{ $restaurant->phone }}"/>
+
+    <x-buttons.return routeReturn="{{ route('restaurants.index') }}"></x-buttons.return>
 </div>

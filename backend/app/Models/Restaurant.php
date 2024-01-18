@@ -19,11 +19,4 @@ class Restaurant extends Model
         'phone',
         'active'
     ];
-
-    public $timestamps = false;
-
-    public function menus(): HasMany
-    {
-        return $this->hasMany(Menu::class, 'restaurant_id');
-    }
 }

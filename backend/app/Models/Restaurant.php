@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Restaurant extends Model
 {
@@ -14,4 +15,11 @@ class Restaurant extends Model
         'country',
         'active'
     ];
+
+    public $timestamps = false;
+
+    public function menus(): HasMany
+    {
+        return $this->hasMany(Menu::class, 'restaurant_id');
+    }
 }

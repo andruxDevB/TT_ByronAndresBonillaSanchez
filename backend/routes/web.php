@@ -8,6 +8,7 @@ use App\Http\Controllers\DriverController;
 use App\Http\Controllers\GuideController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\InternationalFlightController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\RoomController;
@@ -28,6 +29,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         'restaurants' => RestaurantController::class,
         'cabins' => CabinController::class,
         'rooms' => RoomController::class,
+        'menus' => MenuController::class,
         'international_flights' => InternationalFlightController::class,
         'domestic_flights' => DomesticFlightController::class,
     ]);

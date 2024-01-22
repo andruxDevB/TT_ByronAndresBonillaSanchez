@@ -2,29 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreMenuRequest;
 use App\Models\Menu;
+use App\Services\MenuService;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    public function index()
-    {}
-
-    public function create()
-    {}
-
-    public function store(Request $request)
-    {}
-
-    public function show(Menu $menu)
-    {}
-
-    public function edit(Menu $menu)
-    {}
-
-    public function update(Request $request, Menu $menu)
-    {}
-
-    public function destroy(Menu $menu)
-    {}
+    public function store(StoreMenuRequest $request, MenuService $menuService)
+    {
+        $menuService->createMenu($request);
+        return redirect()->back()->with('status', 'New menu registered successfully.');
+    }
 }

@@ -25,12 +25,37 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="p-3">Restaurant Information</h3>
+                        <h3 class="p-3">Restaurant Main Information</h3>
                     </div>
                 </div>
                 <!-- Profile -->
                 @include('restaurants.parts._showProfile')
                 <!-- End Profile -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="mb-1 ps-3">
+                            <h3 class="mb-1">{{ $restaurant->name }} Menus</h3>
+                        </div>
+                        <div class=" me-3 my-3 text-end">
+                            <button type="button" class="btn bg-gradient-dark mb-0" data-bs-toggle="modal" data-bs-target="#modal-create-menu">
+                                <i class="material-icons text-sm">add</i>&nbsp;&nbsp;Add New Menu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @if ($restaurant->menus->count())
+                        <!-- Rooms -->
+                        @include('restaurants.parts._menus')
+                        <!-- End Rooms -->
+                    @else
+                        <x-alert.noResults result="menus"/>
+                    @endif
+                    <x-buttons.return routeReturn="{{ route('restaurants.index') }}"></x-buttons.return>
+                </div>
+                <!-- Add Cabins -->
+                @include('restaurants.parts.modals._createMenu')
+                <!-- End Add Cabins -->
             </div>
             <!-- Footer -->
             <x-footer.auth></x-footer.auth>

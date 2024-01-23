@@ -17,7 +17,9 @@ class ActivityController extends Controller
     {}
     
     public function show(Activity $activity)
-    {}
+    {
+        return view('activities.show', compact('activity'));
+    }
     
     public function edit(Activity $activity)
     {}

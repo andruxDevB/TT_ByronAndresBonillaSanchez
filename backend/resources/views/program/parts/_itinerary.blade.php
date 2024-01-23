@@ -46,7 +46,7 @@
                                     </td>
                                     <td class="align-middle text-sm">
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $activity->activity }}
+                                            {{ $activity->name }}
                                         </p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
@@ -71,23 +71,26 @@
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $activity->meal->breakfast ?? '' }}
+                                            {{ $activity->breakfast ?? '' }}
                                         </p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $activity->meal->lunch ?? '' }}
+                                            {{ $activity->lunch ?? '' }}
                                         </p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $activity->meal->dinner ?? '' }}
+                                            {{ $activity->dinner ?? '' }}
                                         </p>
                                     </td>
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
                                             {{ $activity->remarks }}
                                         </p>
+                                    </td>
+                                    <td class="align-middle">
+                                        <x-buttons.actions routeView='{{ route("activities.show", $activity) }}' routeEdit='{{-- {{ route("guides.edit", $guide) }} --}}' routeDelete=''></x-buttons.actions>
                                     </td>
                                 </tr>
                                 @endforeach

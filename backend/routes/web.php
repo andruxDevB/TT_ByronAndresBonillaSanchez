@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CabinController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CruiseController;
@@ -21,6 +22,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::resources([
         'programs' => ProgramController::class,
+        'activities' => ActivityController::class,
         'clients' => ClientController::class,
         'guides' => GuideController::class,
         'drivers' => DriverController::class,

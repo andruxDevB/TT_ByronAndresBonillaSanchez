@@ -12,20 +12,18 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date of Birth</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nationality</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Telephone</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id Card Number</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Languajes</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remarks</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($program->activities as $activity)
+                                @if ($activity !== null && $activity->guide !== null)
                                     <tr>
                                         <td class="align-middle text-center">
                                             <span class="text-secondar text-xs font-weight-boldy">
-                                                {{ $activity->guide->profile->first_name }} {{ $activity->guide->profile->last_name }}
+                                                {{ $activity->guide->profile->first_name.' '.$activity->guide->profile->last_name }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">
@@ -40,11 +38,6 @@
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondar text-xs font-weight-boldy">
-                                                {{ $activity->guide->profile->nationality }}
-                                            </span>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <span class="text-secondar text-xs font-weight-boldy">
                                                 {{ $activity->guide->profile->phone }}
                                             </span>
                                         </td>
@@ -55,20 +48,11 @@
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondar text-xs font-weight-boldy">
-                                                Guide
-                                            </span>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <span class="text-secondar text-xs font-weight-boldy">
                                                 {{ $activity->guide->languajes }}
                                             </span>
                                         </td>
-                                        <td class="align-middle text-center">
-                                            <span class="text-secondar text-xs font-weight-boldy">
-                                                HOST
-                                            </span>
-                                        </td>
                                     </tr>
+                                @endif
                                 @endforeach
                             </tbody>
                         </table>

@@ -17,9 +17,12 @@ return new class extends Migration
             $table->date('date');
             $table->time('time_pickup')->nullable();
             $table->string('day')->nullable();
-            $table->string('breakfast', 100)->nullable();
-            $table->string('lunch', 100)->nullable();
-            $table->string('dinner', 100)->nullable();
+            $table->unsignedBigInteger('breakfast_id')->nullable();
+            $table->foreign('breakfast_id')->references('id')->on('restaurants')->onDelete('cascade');
+            $table->unsignedBigInteger('lunch_id')->nullable();
+            $table->foreign('lunch_id')->references('id')->on('restaurants')->onDelete('cascade');
+            $table->unsignedBigInteger('dinner_id')->nullable();
+            $table->foreign('dinner_id')->references('id')->on('restaurants')->onDelete('cascade');
             $table->text('remarks')->nullable();
             $table->unsignedBigInteger('program_id')->nullable();
             $table->foreign('program_id')->references('id')->on('programs')->onDelete('cascade');

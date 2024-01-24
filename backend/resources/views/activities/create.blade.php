@@ -1,8 +1,8 @@
 <x-app-layout bodyClass="g-sidenav-show bg-gray-200">
-    <x-navbars.sidebar activePage="guides"></x-navbars.sidebar>
+    <x-navbars.sidebar activePage="programs"></x-navbars.sidebar>
     <x-main.main>
         <!-- Navbar -->
-        <x-navbars.nav.auth sectionMenu='Services' titlePage='Guide Profile'></x-navbars.nav.auth>
+        <x-navbars.nav.auth sectionMenu='Program' titlePage='New Activity'></x-navbars.nav.auth>
         <!-- End Navbar -->
         <div class="container-fluid px-2 px-md-4">
             <!-- Bg Header -->
@@ -13,7 +13,7 @@
                     <div class="card-header bg-white pb-0 p-3">
                         <div class="row">
                             <div class="col-md-8 d-flex align-items-center">
-                                <h3 class="mb-3">New Guide</h3>
+                                <h3 class="mb-3">New Activity</h3>
                             </div>
                         </div>
                     </div>
@@ -21,9 +21,9 @@
                         <!-- Alerts -->
                         <x-alert.alerts></x-alert.alerts>
                         <!-- End Alerts -->
-                        <form method="POST" action="{{ route('guides.store') }}">
+                        <form method="POST" action="{{ route('activities.store') }}">
                             <!-- Create Profile -->
-                            @include('guides.parts._formCreate')
+                            @include('activities.parts._formCreate')
                             <!-- End Create Profile -->
                         </form>
                     </div>

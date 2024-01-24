@@ -41,4 +41,8 @@ class Activity extends Model
         return $this->belongsTo(Hotel::class, "hotel_id");
     }
 
+    public function program(): BelongsTo
+    {
+        return $this->belongsTo(Program::class, "program_id");
+    }
 }

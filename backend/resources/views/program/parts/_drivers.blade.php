@@ -13,17 +13,16 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Driver Telephone</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Company</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type of Transportation</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remarks</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($program->activities as $activity)
+                                @if ($activity !== null && $activity->driver !== null)
                                     <tr>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                {{ $activity->driver->profile->first_name }} {{ $activity->driver->profile->last_name }}
+                                                {{ $activity->driver->profile->first_name.' '. $activity->driver->profile->last_name ?? '' }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">
@@ -43,20 +42,11 @@
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold">
-                                                Guide/driver Español
-                                            </span>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">
                                                 Confirmed
                                             </span>
                                         </td>
-                                        <td class="align-middle text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">
-                                                
-                                            </span>
-                                        </td>
                                     </tr>
+                                @endif
                                 @endforeach
                             </tbody>
                         </table>

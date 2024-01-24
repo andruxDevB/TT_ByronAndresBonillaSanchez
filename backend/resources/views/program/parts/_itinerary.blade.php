@@ -3,7 +3,7 @@
         <div class="card my-4">
             <x-card.cardHeaderProgram title="Itinerary" icon="view_timeline" modal="#" />
 
-            <x-add-new href="{{-- {{ route('guides.edit', $guide) }} --}}" value="New activity" />
+            <x-add-new href="{{ route('activities.create') }}" value="New activity" />
             
             <div class="card-body px-0 pb-2">
                 <div class="table-responsive p-0">
@@ -22,7 +22,6 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Breakfast</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Lunch</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Dinner</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Remarks</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,11 +81,6 @@
                                     <td class="align-middle text-center text-sm">
                                         <p class="text-xs text-secondary mb-0">
                                             {{ $activity->dinner ?? '' }}
-                                        </p>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <p class="text-xs text-secondary mb-0">
-                                            {{ $activity->remarks }}
                                         </p>
                                     </td>
                                     <td class="align-middle">

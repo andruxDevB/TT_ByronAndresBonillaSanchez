@@ -33,7 +33,7 @@
            @else
                 <x-alert.noResults result='drivers' />
             @endif
-            <x-footer.auth></x-footer.auth> --}}
+            <x-footer.auth></x-footer.auth>
         </div>
     </x-main.main>
     <script>

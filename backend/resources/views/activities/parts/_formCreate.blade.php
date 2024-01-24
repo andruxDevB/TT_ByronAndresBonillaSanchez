@@ -6,11 +6,37 @@
         @enderror
     </x-forms.inputEdit-md-6>
         
-    <x-forms.inputEdit-md-3 label="Activity Date" type="date" name="activity_date" value="">
+    <x-forms.inputEdit-md-3 id="datepicker" label="Activity Date" type="date" name="activity_date" value="">
         @error('activity_date')
             <p class='text-danger inputerror'>{{ $message }} </p>
         @enderror
     </x-forms.inputEdit-md-3>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <div class="input-group input-group-static mb-md-6 mb-4 date" id="datepicker">
+                <input type="text" class="form-control" name="fecha">
+                <span class="input-group-append">
+                    <span class="input-group-text bg-light d-block">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    {{-- <div class="form-group">
+        <label for="fecha">Fecha:</label>
+        <div class="input-group date" id="datepicker">
+            <input type="text" class="form-control" name="fecha">
+            <span class="input-group-append">
+                <span class="input-group-text bg-light d-block">
+                    <i class="fa fa-calendar"></i>
+                </span>
+            </span>
+        </div>
+    </div> --}}
 
     <x-forms.inputEdit-md-3 label="Activity time pickup" type="time" name="time_pickup" value="">
         @error('time_pickup')

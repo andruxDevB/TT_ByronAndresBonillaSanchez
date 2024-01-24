@@ -10,7 +10,6 @@
                             <thead>
                                 <tr>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date of Birth</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Telephone</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id Card Number</th>
@@ -24,11 +23,6 @@
                                         <td class="align-middle text-center">
                                             <span class="text-secondar text-xs font-weight-boldy">
                                                 {{ $activity->guide->profile->first_name.' '.$activity->guide->profile->last_name }}
-                                            </span>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <span class="text-secondar text-xs font-weight-boldy">
-                                                {{ $activity->guide->profile->DOB }}
                                             </span>
                                         </td>
                                         <td class="align-middle text-center">

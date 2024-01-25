@@ -26,8 +26,14 @@
     
     <x-input-info label="{{ __('Telephone') }}" value="{{ $program->client->user->profile->phone }}"/>
 
-    <x-input-info label="{{ __('Type Tour') }}" value="{{ $program->type_tour }}"/>
-
     <x-input-info label="{{ __('Sales Executive') }}" value="{{ $program->sales_executive }}"/>
+
+    <x-input-info label="{{ __('Start Date Tour') }}" value="{{ $program->start_date }}"/>
+
+    <x-input-info label="{{ __('End Date Tour') }}" value="{{ $program->end_date }}"/>
+
+    <x-input-info label="{{ __('Country Tours') }}" value="{{ $program->country_tours }}"/>
+    
+    <x-input-info label="{{ __('Tour Days') }}" value="{{ $program->tour_days }}"/>
         
 </div>

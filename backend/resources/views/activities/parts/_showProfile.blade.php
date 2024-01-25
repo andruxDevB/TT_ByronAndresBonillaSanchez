@@ -23,7 +23,7 @@
     
     <x-inputs.input-md-4 label="{{ __('Driver') }}" value="{{ $activity->driver->profile->first_name.' '.$activity->driver->profile->last_name ?? 'Unassigned' }}"/>
 
-    <x-inputs.input-md-4 label="{{ __('Type Transport') }}" value="{{ $activity->driver->type_transport ?? 'Unassigned' }}"/>
+    <x-inputs.input-md-4 label="{{ __('Type Transport') }}" value="{{ $activity->driver->transport_type ?? 'Unassigned' }}"/>
     
     <x-buttons.return routeReturn="{{ route('programs.show',$activity->program_id) }}"></x-buttons.return>
 </div>

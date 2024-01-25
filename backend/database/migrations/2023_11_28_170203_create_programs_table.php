@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('num_pax');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->integer('tour_days');
             $table->year('tour_year', 4);
             $table->string('file_number', 10);
             $table->string('country_tours', 50);

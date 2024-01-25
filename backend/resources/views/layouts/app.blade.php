@@ -56,14 +56,6 @@
             }
             const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
             const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
-            $(document).ready(function(){
-                $('#datepicker').datepicker({
-                startDate: "02/11/2022", // Fecha de inicio del rango
-                endDate: "02/27/2022", // Fecha de fin del rango
-                autoclose: true
-                });
-            });
             
             // Get all elements with class "auto-close"
             const autoCloseElements = document.querySelectorAll(".auto-close");
@@ -103,6 +95,13 @@
                 fadeAndSlide(element);
             });
             }, 1500);
+            
+            $(document).ready(function(){
+                $('#datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+                });
+            });
 
             $(document).ready(function domReady() {
                 $(".js-select2").select2({

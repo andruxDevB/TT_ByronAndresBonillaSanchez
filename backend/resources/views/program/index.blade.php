@@ -17,7 +17,7 @@
                             <!-- End Title -->
                         </div>
                         <div class="me-3 my-3 text-end">
-                            <a href="#" class="btn bg-gradient-dark mb-0"><i class="material-icons text-sm">add</i>&nbsp;&nbsp;Add New Program</a>
+                            <a href="{{ route('programs.create') }}" class="btn bg-gradient-dark mb-0"><i class="material-icons text-sm">add</i>&nbsp;&nbsp;Add New Program</a>
                         </div>
                         <div class="card-body px-0 pb-2">
                             <div class="table-responsive">

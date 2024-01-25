@@ -20,10 +20,10 @@
                     <p class="text-center text-secondary text-xs mb-0">{{ $program->tour_year }}</p>
                 </td>
                 <td class="align-middle">
-                    <p class="text-center text-secondary text-xs mb-0">2023/Nov/03</p>
+                    <p class="text-center text-secondary text-xs mb-0">{{ $program->start_date }}</p>
                 </td>
                 <td class="align-middle">
-                    <p class="text-center text-secondary text-xs mb-0">2023/Nov/03</p>
+                    <p class="text-center text-secondary text-xs mb-0">{{ $program->end_date }}</p>
                 </td>
                 <td class="align-middle">
                     <p class="text-center text-secondary text-xs mb-0">{{ $program->num_pax }}</p>

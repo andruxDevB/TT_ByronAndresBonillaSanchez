@@ -17,7 +17,7 @@
             @csrf
         </form>
         <ul class="navbar-nav">
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link text-dark {{ $activePage == 'dashboard' ? ' active bg-gradient-primary' : '' }} "
                     href="#">
                     <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
@@ -25,7 +25,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-8">Management</h6>
             </li>
@@ -40,11 +40,11 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-dark {{ $activePage == 'clients' ? ' active bg-gradient-primary' : '' }} "
-                    href="{{-- {{ route("clients.index") }} --}}">
+                    href="{{ route("clients.index") }}">
                     <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ps-2 pe-2 material-symbols-outlined text-center opacity-10">hail</i>
                     </div>
-                    <span class="nav-link-text ms-1">Clients</span>
+                    <span class="nav-link-text ms-1">Passengers</span>
                 </a>
             </li>
             <li class="nav-item">

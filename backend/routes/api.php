@@ -6,6 +6,7 @@ use App\Http\Controllers\API\GuideController;
 use App\Http\Controllers\API\HotelController;
 use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\RestaurantController;
+use App\Http\Controllers\API\ProgramController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,12 +24,13 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 }); */
 
-Route::controller(RegisterController::class)->group(function(){
+Route::controller(RegisterController::class)->group(function () {
     Route::post('/auth/register', 'register');
     Route::post('/auth/login', 'login');
 });
 
-Route::middleware('auth:sanctum')->group(function(){
+Route::middleware('auth:sanctum')->group(function () {
+    Route::resource('programs', ProgramController::class);
     Route::resource('guides', GuideController::class);
     Route::resource('drivers', DriverController::class);
     Route::resource('hotels', HotelController::class);

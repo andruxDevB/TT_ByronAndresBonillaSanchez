@@ -17,7 +17,8 @@ class HotelResource extends JsonResource
             'hotel_category' => $this->category,
             'sales_executive' => $this->sales_executive,
             'contact_email' => $this->email,
-            'contact_phone' => $this->phone
+            'contact_phone' => $this->phone,
+            'rooms' => new RoomResourceCollection($this->rooms),
         ];
     }
 }

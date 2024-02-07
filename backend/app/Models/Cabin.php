@@ -13,7 +13,7 @@ class Cabin extends Model
         'cabin_name',
         'deck',
         'active',
-        'cruide_id'
+        'cruise_id'
     ];
 
     public $timestamps = false;

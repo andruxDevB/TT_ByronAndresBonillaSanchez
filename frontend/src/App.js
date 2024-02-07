@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import React from "react";
+import { Routes, Route, Navigate, useLocation, BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Sidenav from "examples/Sidenav";
@@ -13,6 +14,7 @@ import createCache from "@emotion/cache";
 import routes from "routes";
 import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "context";
 import brandDark from "assets/images/logo-s.png";
+import ProtectedRoute from "protectedroute";
 
 export default function App() {
   const [controller, dispatch] = useMaterialUIController();

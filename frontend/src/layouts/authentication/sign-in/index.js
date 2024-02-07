@@ -1,12 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import Card from "@mui/material/Card";
 import Switch from "@mui/material/Switch";
-import Grid from "@mui/material/Grid";
-import MuiLink from "@mui/material/Link";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import GoogleIcon from "@mui/icons-material/Google";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDInput from "components/MDInput";
@@ -15,9 +11,64 @@ import BasicLayout from "layouts/authentication/components/BasicLayout";
 import bgImage from "assets/images/background-guest.jpg";
 
 function Basic() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const navigate = useNavigate();
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/auth/login",
+        {
+          email,
+          password,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+
+      const token = response.data.data.token;
+      console.log("Token:", token);
+      localStorage.setItem("token", token);
+      //navigate("/guides");
+    } catch (error) {
+      console.log("Error al iniciar sesión:", error.response.data);
+    }
+  };
+
+  /* try {
+      await axios
+        .get("http://127.0.0.1:8000/sanctum/csrf-cookie", {
+          withCredentials: true,
+        })
+        .then(() => {
+          return axios.post(
+            "http://127.0.0.1:8000/api/auth/login",
+            {
+              email,
+              password,
+              remember: rememberMe,
+            },
+            {
+              withCredentials: true,
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+        });
+      console.log("Login exitoso: ", response.data);
+      navigate("/dashboard");
+    } catch (error) {
+      console.log("Error al iniciar sesión:", error.response.data);
+    }
+  }; */
 
   return (
     <BasicLayout image={bgImage}>
@@ -41,12 +92,24 @@ function Basic() {
           </MDTypography>
         </MDBox>
         <MDBox pt={4} pb={3} px={3}>
-          <MDBox component="form" role="form">
+          <MDBox component="form" role="form" onSubmit={handleSignIn}>
             <MDBox mb={2}>
-              <MDInput type="email" label="Email" fullWidth />
+              <MDInput
+                type="email"
+                label="Email"
+                fullWidth
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </MDBox>
             <MDBox mb={2}>
-              <MDInput type="password" label="Password" fullWidth />
+              <MDInput
+                type="password"
+                label="Password"
+                fullWidth
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </MDBox>
             <MDBox display="flex" alignItems="center" ml={-1}>
               <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -61,7 +124,7 @@ function Basic() {
               </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="primary" fullWidth>
+              <MDButton variant="gradient" color="primary" fullWidth type="submit">
                 sign in
               </MDButton>
             </MDBox>

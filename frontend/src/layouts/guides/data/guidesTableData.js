@@ -25,10 +25,11 @@ export default function data() {
 
   useEffect(() => {
     const fetchData = async () => {
+      const token = localStorage.getItem("token");
       try {
         const config = {
           headers: {
-            Authorization: "Bearer 3|tXbmxrJaC7cqUXxJeC2IuQL0ifGcoWwTp90Rn9C574b18adc",
+            Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
           },
         };

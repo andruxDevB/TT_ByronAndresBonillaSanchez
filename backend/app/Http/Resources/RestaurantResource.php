@@ -16,7 +16,8 @@ class RestaurantResource extends JsonResource
             'restaurant_city' => $this->city,
             'sales_executive' => $this->sales_executive,
             'contact_email' => $this->email,
-            'contact_phone' => $this->phone
+            'contact_phone' => $this->phone,
+            'menus' => new MenuResourceCollection($this->menus),
         ];
     }
 }
